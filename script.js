@@ -1,3 +1,6 @@
+
+
+
 // Write your JavaScript code here!
 window.addEventListener("load", function() {
     let formSubmit = document.getElementById("formSubmit");
@@ -13,12 +16,16 @@ window.addEventListener("load", function() {
     })
     let listedPlanets;
     // Set listedPlanetsResponse equal to the value returned by calling myFetch()
-    let listedPlanetsResponse;
+    let listedPlanetsResponse = myFetch();
     listedPlanetsResponse.then(function (result) {
         listedPlanets = result;
-        console.log(listedPlanets);
+        // console.log(listedPlanets);
     }).then(function () {
-        console.log(listedPlanets);
+        // console.log(listedPlanets);
+        // let pickPlanet(listedPlanets) = theOne
+        let theOne = pickPlanet(listedPlanets);
+        // console.log(theOne)
+        addDestinationInfo(document, theOne.name, theOne.diameter, theOne.star, theOne.distance, theOne.moons, theOne.image)
         // Below this comment call the appropriate helper functions to pick a planet fom the list of planets and add that information to your destination.
     })
     // add event listener test validation in live server browser. see what happens when submit and use dev tools console
